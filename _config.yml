@@ -15,7 +15,7 @@ navbar-links:
   About Me: "aboutme"
   Resources:
     - Posts: "https://beautifuljekyll.com"
-    - Projects: "https://www.markdowntutorial.com/"
+    - Projects: "projects"
   Author's home: "mkhalil7625.github.io"
 
 # --- Logo --- #
