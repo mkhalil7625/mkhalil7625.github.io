@@ -1,16 +1,10 @@
 ---
 layout: page
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: I would describe myself:
+subtitle: a software developer and people advocate
 ---
+My professional interest has always resided at the intersection of technology and people. I’m fascinated by the fact that new technologies are usually born out of people’s necessities for problem solving. Conversely, I think that it’s people’s ingenuity that drives technological innovation.
 
-My name is Inigo Montoya. I have the following qualities:
+I see the two elements as inseparably interwoven with each other. People without technology is inefficient, and technology without people lacks meaning.
 
-- I rock a great mustache
-- I'm extremely loyal to my family
-
-What else do you need?
-
-### my history
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+I hope to contribute efficiency, value, and meaning by using technology to help people.
