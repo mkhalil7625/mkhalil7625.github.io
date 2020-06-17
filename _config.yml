@@ -12,7 +12,7 @@ author: Mohammed Khalil
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  About Me: "linkedin.com/in/mohammed-khalil-9b2ba483"
+  About Me: "https://linkedin.com/in/mohammed-khalil-9b2ba483"
   Resources:
     - Posts: "https://beautifuljekyll.com"
     - Projects: "https://www.markdowntutorial.com/"
