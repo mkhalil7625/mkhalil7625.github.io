@@ -1,0 +1,49 @@
+---
+layout: post
+title: Prediicting the Default of Credit Crad Clients
+subtitle: Analysis of prediction Models Used and the Predictive Accuracy of Probability of Default.
+cover-img: /assets/img/banking.jpg
+
+gh-badge: [star, fork, follow]
+tags: [test]
+comments: true
+---
+
+## FIFA 19 Data Analysis
+FIFA 19 is a soccerball simulation video game developed by EA. EA does a great job on making the video game mimics the game in real life. 
+As the data collected by EA in the video game is based on real life data analysys let's determine the best soccer team Using data from Kaggle's [FIFA 19 Dataset](https://kaggle.com/karangadiya/fifa19)
+
+### Top Ten Teams
+Let's take a look at the top ten teams based on overall quality of their players(quality is reated from 0 to 100), the net value and the total weekly salary.
+To do so, let's first extract the correct values from the value and salary coulmns:
+
+![]( /assets/img/function.JPG)
+
+After converting those string values and getting the actual values, let's see the top 10 teams based on the quality of their players along with the net value of each team and the weekly wages paid.
+
+**Note:** Most teams will add some players from their youth team to the professional team; that  is why I calculated the median of the Ovaerall quality of the plyers.
+![]( /assets/img/top_ten.JPG)
+![]( /assets/img/top_ten_visual.JPG)
+
+### Superstar Players
+Superstar players are known for their quality and the ability to change results in favor of their teams and to wideen the club's fan base. That is why the best teams will always try to convince those superstars to join their teams. 
+Analyzing the top team's data against the top ten ranked players, shows that Real Madrid have 3 players out of the ten that are ranked in the top ten, followed by Manchester City and Barcelona with 2 players each and no top ranked players from Inter, Napoli, Tottenham Hotspur, and Liverpool.
+![]( /assets/img/top_ranked.JPG)
+
+### New Rating
+Now as Inter, Napoli, Tottenham Hotspur, and Liverpool didn't acquire the services of any top ranked players, they are now out of the picture.
+Now let's condense the position attribute to only four values(GK, Defence, Middlefield, Offence)
+
+![]( /assets/img/condenced_position.JPG)
+
+After analyzing the player's data, I noticed that some players have some skills that are not needed for their position, so I updated the data to only include the skills pertained to each line and claculated the palyers overall skills rating based on this.
+
+Analyzing the data for each team and the adjusted overoall player's skills evaluation, we can see that Bayern München has the best offence, while Real Madrid has the best defence. On the other hand, Manchester City has the best Middlefield line and the best Goalkeepers.
+Also, overall players skills are in favor of Manchester City.
+![]( /assets/img/position.JPG)
+
+### Summary
+Although Manchester City's team has less Superstars players compared to Real Madrid, the team is more harmonised across all lines, and has good quality players overall.
+
+## Final Thoughts
+The dataset contains a lot data that can be further analized, like determining who is the best player in each position, relationship between height/weight and sprint speed, acceleration and stamina  
