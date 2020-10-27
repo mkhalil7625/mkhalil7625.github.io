@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Prediicting the Default of Credit Crad Clients
-subtitle: Analysis of prediction Models Used and the Predictive Accuracy of Probability of Default.
+title: Predicting the Default of Credit Crad Clients
+subtitle: Analysis of prediction Models Used and the Predictive Accuracy of Probability of Default Clients.
 cover-img: /assets/img/banking.jpg
 
 gh-badge: [star, fork, follow]
@@ -9,41 +9,56 @@ tags: [test]
 comments: true
 ---
 
-## FIFA 19 Data Analysis
-FIFA 19 is a soccerball simulation video game developed by EA. EA does a great job on making the video game mimics the game in real life. 
-As the data collected by EA in the video game is based on real life data analysys let's determine the best soccer team Using data from Kaggle's [FIFA 19 Dataset](https://kaggle.com/karangadiya/fifa19)
+## Abstract
+In recent years, financial institutions invested a lot on risk prediction than crisis management. The reason for that is to use financial information, such as business financial statement,customer transaction and repayment records, etc., to predict business performance or individual customers’ creditrisk and to reduce the damage and uncertainty.  
+In this article, I’ll explain the method, models, and demonstrate the building of a Credit Card Prediction system using machine learning algorithms to help credit card issuers to reduce their risk.
 
-### Top Ten Teams
-Let's take a look at the top ten teams based on overall quality of their players(quality is reated from 0 to 100), the net value and the total weekly salary.
-To do so, let's first extract the correct values from the value and salary coulmns:
+## Dataset
+The data collected in this dataset represents the case of customers’ default payments in Taiwan. 
+Here is the link to the Dataset: [DATASET](https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients#)
 
-![]( /assets/img/function.JPG)
+### Introduction
+From the perspective of risk control, estimating the probability of default will be more meaningful than classifying customers into the binary results. 
+To do so, first we need to look at how the data is distributed;
+After exploring the datset, splitting the dataset into train and test dataset, I have creaeted I have determined the majority class as follwos:
 
-After converting those string values and getting the actual values, let's see the top 10 teams based on the quality of their players along with the net value of each team and the weekly wages paid.
+let's first extract the correct values from the value and salary coulmns:
 
-**Note:** Most teams will add some players from their youth team to the professional team; that  is why I calculated the median of the Ovaerall quality of the plyers.
-![]( /assets/img/top_ten.JPG)
-![]( /assets/img/top_ten_visual.JPG)
+![]( /assets/img/majority.JPG)
 
-### Superstar Players
-Superstar players are known for their quality and the ability to change results in favor of their teams and to wideen the club's fan base. That is why the best teams will always try to convince those superstars to join their teams. 
-Analyzing the top team's data against the top ten ranked players, shows that Real Madrid have 3 players out of the ten that are ranked in the top ten, followed by Manchester City and Barcelona with 2 players each and no top ranked players from Inter, Napoli, Tottenham Hotspur, and Liverpool.
-![]( /assets/img/top_ranked.JPG)
+Tha majority class occurs with 78%, so this is considered to ba a case of implanaced classes.
+Because the target feature is impalanced, the "Accoracy Score" is not going to be the best model evaluation metric. Also, as I would rather have some extra false positives over saving some extra false negatives, it is crusial to identify true positives. Thus, I am using the Sinsitivity/Recall scoring and ROC to evaluate my models.
 
-### New Rating
-Now as Inter, Napoli, Tottenham Hotspur, and Liverpool didn't acquire the services of any top ranked players, they are now out of the picture.
-Now let's condense the position attribute to only four values(GK, Defence, Middlefield, Offence)
+## Models
+For this project I have used Logistic Refression, Random Forest Classifier, and XGBoost to develop models of risk predictions.
 
-![]( /assets/img/condenced_position.JPG)
+### 1-Logistic Regression:
+The first statistical model I used was the Logistic Regression. Logistic regression is a classification algorithm used to assign observations to a discrete set of classes. In order to train my logistic regression model I used the “LogisticRegression” class from the “sklearn.linear_model” module. the validation accuracy of the model was 81%, which is the highest among all models. The ROC score was 71%.
+![]( /assets/img/LRROC.JPG)
+However, the recall/sensitivity was 24% which is the lowest among all models.
+![]( /assets/img/LRcon.JPG)
 
-After analyzing the player's data, I noticed that some players have some skills that are not needed for their position, so I updated the data to only include the skills pertained to each line and claculated the palyers overall skills rating based on this.
+### 2-Random Forest Classifier:
+The Random Forest Classifier is a statistical model that fits a number of decision trees on varioues sub-samples of the dataset. One of the advantages of Random Forest over Decision Trees is that it is less sensitive to hyperparameteres and fits better.
+In order to train my Random Forest model I used the "RandomForestClassifier" class from the “sklearn.linear_model” module with tuning the hyperbarameters to increase the bias and to put into consideration the weight of classes.
+![]( /assets/img/ran1.JPG)
+The ROC score for this model was 77.7% and the recall scpre was 58.7%
+Then I generated the permutation importances of the model and remoced all of the features that are have a negative impact on the model
+![]( /assets/img/perm.JPG)
+The final ROC sore remained teh same with a slight improvement in the recall score to become 58.9%.
+![]( /assets/img/ranconf.JPG)
+![]( /assets/img/ranroc.JPG)
 
-Analyzing the data for each team and the adjusted overoall player's skills evaluation, we can see that Bayern München has the best offence, while Real Madrid has the best defence. On the other hand, Manchester City has the best Middlefield line and the best Goalkeepers.
-Also, overall players skills are in favor of Manchester City.
-![]( /assets/img/position.JPG)
+### 3-XGBoost:
+The last statistical model I used was the XGBoost. XGBoost uses ensembles trees like the Random Forest Classifier, but utilizes a tecnique different than the bagging technique used by the random forest classifier. The tecniques that XGBoost utlizes called boosting. Boosting works in a similar way as bagging, except that the trees are grown sequentially.
+In order to train my XGBoost model I used the "XGBClassifier" class from the “XGBoost” module with tuning the hyperbarameters to increase the bias and to put into consideration the weight of classes.
+The ROC score for this model was 77.8% and the recall score has increased to 61%%
 
+![]( /assets/img/xgbcon.JPG)
+![]( /assets/img/xgbroc.JPG)
 ### Summary
-Although Manchester City's team has less Superstars players compared to Real Madrid, the team is more harmonised across all lines, and has good quality players overall.
+The main goal is to predict more True Positives which indicate high risk customers to minimize the risk to the credit card issuer.
+Rgus, the best model to be used n this case the XGBoost
 
-## Final Thoughts
-The dataset contains a lot data that can be further analized, like determining who is the best player in each position, relationship between height/weight and sprint speed, acceleration and stamina  
+
+
