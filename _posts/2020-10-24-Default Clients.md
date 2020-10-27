@@ -10,7 +10,7 @@ comments: true
 ---
 
 ## Abstract
-In recent years, financial institutions invested a lot on risk prediction than crisis management. The reason for that is to use financial information, such as business financial statement,customer transaction and repayment records, etc., to predict business performance or individual customers’ creditrisk and to reduce the damage and uncertainty.  
+In recent years, financial institutions invested a lot on risk prediction than crisis management. The reason for that is to use financial information, such as business financial statement,customer transaction and repayment records, etc., to predict business performance or individual customers’ credit risk and to reduce the damage and uncertainty.  
 In this article, I’ll explain the method, models, and demonstrate the building of a Credit Card Prediction system using machine learning algorithms to help credit card issuers to reduce their risk.
 
 ## Dataset
@@ -27,7 +27,7 @@ let's first extract the correct values from the value and salary coulmns:
 ![]( /assets/img/majority.JPG)
 
 Tha majority class occurs with 78%, so this is considered to ba a case of implanaced classes.
-Because the target feature is impalanced, the "Accoracy Score" is not going to be the best model evaluation metric. Also, as I would rather have some extra false positives over saving some extra false negatives, it is crusial to identify true positives. Thus, I am using the Sinsitivity/Recall scoring and ROC to evaluate my models.
+Because the target feature is impalanced, the "Accoracy Score" is not going to be the best model evaluation metric. Also, as I would rather have some extra false positives over saving some extra false negatives; it is crusial to identify true positives. Thus, I am using the Sinsitivity/Recall scoring and ROC to evaluate my models.
 
 ## Models
 For this project I have used Logistic Refression, Random Forest Classifier, and XGBoost to develop models of risk predictions.
@@ -60,7 +60,7 @@ The ROC score for this model was 77.8% and the recall score has increased to 61%
 The main goal is to predict more True Positives which indicate high risk customers to minimize the risk to the credit card issuer.
 Thus, the best model to be used n this case the XGBoost
 
-###
+### Source Code
 The Code used to generate the formentioned models is:
-[DATASET](https://colab.research.google.com/drive/1qg6x_1ZSFqchT7EmMvKMmFPBDa_B4D-1?usp=sharing)
+[Notebook](https://colab.research.google.com/drive/1qg6x_1ZSFqchT7EmMvKMmFPBDa_B4D-1?usp=sharing)
 
