@@ -58,7 +58,7 @@ The ROC score for this model was 77.8% and the recall score has increased to 61%
 ![]( /assets/img/xgbroc.JPG)
 ### Summary
 The main goal is to predict more True Positives which indicate high risk customers to minimize the risk to the credit card issuer.
-Rgus, the best model to be used n this case the XGBoost
+Thus, the best model to be used n this case the XGBoost
 
 
 
